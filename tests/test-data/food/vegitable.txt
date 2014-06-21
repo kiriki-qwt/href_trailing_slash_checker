@@ -1,0 +1,14 @@
+<html>
+<body>
+<p>Vege List</p>
+<ul>
+<li><a href="<?=$root_url; ?>/vege/tomato">トマト</a></li>
+<li><a href="<?=$root_url; ?>/vege/onion/">オレンジ</a></li>
+<li><a href="<?=$root_url; ?>/vege/mashroom">キノコ</a></li>
+<li><a href="<?=$root_url; ?>/vege/eggplant/">茄子</a></li>
+<li><a href = "<?=$root_url; ?>/vege/ginger">ショウガ</a></li> /* has blank */
+<li><a href =  " <?=$root_url; ?>/vege/pumpkin">カボチャ</a></li>　/* has blank */
+
+</ul>
+</body>
+</html>
