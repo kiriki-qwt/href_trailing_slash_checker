@@ -1,17 +1,16 @@
 #!/bin/bash
 
 usage_exit() {
-        echo "Usage: $0 [-c] [-d dir] [-s]" 1>&2
+        echo "Usage: $0 [-c] [-s] /path/to/dir" 1>&2
         exit 1
 }
+
 
 while getopts cd:hs: OPT
 do
     case $OPT in
         c)  count_flg=1
             ;;    
-        d)  target_dir=$OPTARG
-            ;;
         h)  usage_exit
             ;;
         s)  slush_flg=$OPTARG
@@ -22,6 +21,12 @@ do
 done
 
 shift $((OPTIND - 1))
+
+if [ $# -ne 1 ]; then
+  usage_exit
+fi
+
+target_dir=$1
 
 rgexp="href\s*=\s*[\"|\']([^\"|^\']+)[\"|\']"
 
