@@ -38,6 +38,6 @@ href属税の末尾のスラッシュの有無をチェックするツール。
 ##テストコード##
 
     cd tests
-    sh href_trailing_slash_check.test.sh
+    sh href_trailing_slash_checker.test.sh
 
 エラーが起きなければ（何も表示されなければ）大丈夫。エラー起きたら教えてください。

@@ -5,7 +5,7 @@ test_failure() {
   echo "【 TEST FAILURE!!! 】Message: $1" 1>&2
 }
 
-SCRIPT_PATH=./../href_trailing_slash_check.sh
+SCRIPT_PATH=./../href_trailing_slash_checker.sh
 TEST_DATA_DIR_PATH=./test-data
 
 #case リンクが含まれる行数は13(@全ディレクトリ)
