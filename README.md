@@ -18,6 +18,8 @@ href属税の末尾のスラッシュの有無をチェックするツール。
 *-c: ヒットした行数を表示します
 （href属性の数ではなく、それらが含まれる行数であることに注意。1行に2つ含まれていた場合は1つにカウントされる）
 
+*-f: ヒットしたファイル名のみを表示します
+
 *-s: 末尾スラッシュの有り/無しを指定  
 　　-s0:末尾スラッシュ無し  
 　　-s1:末尾スラッシュ有り  
@@ -30,6 +32,10 @@ href属税の末尾のスラッシュの有無をチェックするツール。
 
 `sh href_trailing_slash_checker.sh -s1 /home/kiriki/flowers`  
 /home/kiriki/flowersディレクトリ以下で末尾がスラッシュ有りのhref属性がある行を表示
+
+`sh href_trailing_slash_checker.sh -f /home/kiriki/countries`  
+/home/kiriki/countriesディレクトリ以下でhref属性を含むファイル名を表示
+
 
 `sh href_trailing_slash_checker.sh -c -s0 /home/kiriki/animals`  
 /home/kiriki/animalsディレクトリ以下で末尾がスラッシュ無しのhref属性を含む行数を表示
