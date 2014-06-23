@@ -1,7 +1,7 @@
 ##概要##
 href属税の末尾のスラッシュの有無をチェックするツール。
-レンダリング後のHTMLを解析するのではなく、ソースファイル中のhref属性を探し、
-検索条件に合うものを洗い出す。
+指定したディレクトリ以下の、ソースファイル中のhref属性を探す。
+検索対象として、末尾スラッシュの有り/無しを選択可能。
 
 
 ##インストール方法##
@@ -11,7 +11,7 @@ href属税の末尾のスラッシュの有無をチェックするツール。
 ##実行方法##
     
     cd href_trailing_slash_checker
-    sh href_trailing_slash_checker.sh '/path/to/dir(=>ココで指定したディレクトリ以下を検索対象とします)'
+    sh href_trailing_slash_checker.sh '/path/to/dir'
 
 ###実行オプション###
 
