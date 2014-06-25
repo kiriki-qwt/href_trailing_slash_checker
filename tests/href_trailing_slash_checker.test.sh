@@ -44,6 +44,12 @@ if [ `sh $SCRIPT_PATH -c -f -s1 $TEST_DATA_DIR_PATH/area` -ne 1 ]; then
   test_failure "At area/ directory, trailing-slash-link including file number must be 1" "$LINENO"
 fi
 
+#case jsファイルは検索対象から除く(@js-exlude/ディレクトリ以下)
+if [ `sh $SCRIPT_PATH -c $TEST_DATA_DIR_PATH/js-exclude` -ne 6 ]; then
+  test_failure "At js-exlude/ directory, link number must be 6" "$LINENO"
+fi
+
+
 
 
 exit 0;
