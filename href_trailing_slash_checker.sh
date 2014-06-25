@@ -41,17 +41,16 @@ if [ $slush_flg ]; then
     esac
 fi
 
-if [ $count_flg ]; then
-  if [ $only_file_flg ]; then
-    egrep -lr $rgexp $target_dir | wc -l
-  else
-    egrep -r $rgexp $target_dir | wc -l
-  fi
+#grepオプション
+if [ $only_file_flg ]; then
+  grepOption="lr"
 else
-  if [ $only_file_flg ]; then
-   egrep -lr $rgexp $target_dir
-  else
-   egrep -r $rgexp $target_dir
-  fi
+  grepOption="r"
+fi
+
+if [ $count_flg ]; then
+    find $target_dir ! -name "*.js" -type f | xargs egrep -$grepOption $rgexp | wc -l
+else
+    find $target_dir ! -name "*.js" -type f | xargs egrep -$grepOption $rgexp
 fi
 exit 0
