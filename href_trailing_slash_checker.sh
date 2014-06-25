@@ -43,9 +43,9 @@ fi
 
 #grepオプション
 if [ $only_file_flg ]; then
-  grepOption="lr"
+  grepOption="ln"
 else
-  grepOption="r"
+  grepOption="n"
 fi
 
 if [ $count_flg ]; then
