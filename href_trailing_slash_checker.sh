@@ -30,16 +30,17 @@ fi
 
 target_dir=$1
 
-rgexp="href\s*=\s*[\"|\']([^\"|^\']+)[\"|\']"
-
+slushFlgOption=""
 if [ $slush_flg ]; then
     case $slush_flg in
-        0)  rgexp="href\s*=\s*[\"|\']([^\"|^\']+[^\/])[\"|\']"
+        0)  slushFlgOption="[^\/]"
           ;;
-        *) rgexp="href\s*=\s*[\"|\']([^\"|^\']+\/)[\"|\']"
+        *)  slushFlgOption="\/"
           ;;
     esac
 fi
+
+rgexp="href\s*=\s*[\"\']([^\"\'#]+$slushFlgOption)(#[^\"\'\/]*)?[\"\']"
 
 #grepオプション
 if [ $only_file_flg ]; then

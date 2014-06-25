@@ -28,10 +28,25 @@ if [ `sh $SCRIPT_PATH -c -s1 $TEST_DATA_DIR_PATH/food` -ne 5 ]; then
   test_failure "At food/ directory, trailing-slash-link line number must be 5" "$LINENO"
 fi
 
+#case リンクが含まれる行数は9(@area/ディレクトリ以下)
+if [ `sh $SCRIPT_PATH -c $TEST_DATA_DIR_PATH/area` -ne 8 ]; then
+  test_failure "At area/ directory, file number must be 8" "$LINENO"
+fi
+
 
 #case リンクが含まれるファイル数は3(@area/ディレクトリ以下)
 if [ `sh $SCRIPT_PATH -c -f $TEST_DATA_DIR_PATH/area` -ne 3 ]; then
   test_failure "At area/ directory, file number must be 3" "$LINENO"
+fi
+
+#case 最後がスラッシュなしのリンクが含まれる行数は6(@area/ディレクトリ以下)
+if [ `sh $SCRIPT_PATH -c -s0 $TEST_DATA_DIR_PATH/area` -ne 6 ]; then
+  test_failure "At area/ directory, not-trailing-slash-link line number must be 6" "$LINENO"
+fi
+
+#case 最後がスラッシュありのリンクが含まれる行数は2(@area/ディレクトリ以下)
+if [ `sh $SCRIPT_PATH -c -s1 $TEST_DATA_DIR_PATH/area` -ne 2 ]; then
+  test_failure "At area/ directory, trailing-slash-link line number must be 2" "$LINENO"
 fi
 
 #case 最後がスラッシュなしのリンクが含まれるファイル数は2(@area/ディレクトリ以下)
